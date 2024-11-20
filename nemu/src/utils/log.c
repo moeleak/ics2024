@@ -21,6 +21,13 @@ extern uint64_t g_nr_guest_inst;
 FILE *log_fp = NULL;
 
 void init_log(const char *log_file) {
+  static bool is_initialized = false;
+  if (is_initialized) {
+    printf("init_log already called.\n");
+    return;
+  }
+  is_initialized = true;
+
   log_fp = stdout;
   if (log_file != NULL) {
     FILE *fp = fopen(log_file, "w");
