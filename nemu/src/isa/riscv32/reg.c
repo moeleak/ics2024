@@ -25,6 +25,7 @@ const char *regs[] = {
 
 void isa_reg_display() {
   size_t num_regs = sizeof(regs) / sizeof(regs[0]);
+  printf("PC: %d\n", cpu.pc);
   for (int i = 0; i < num_regs; i++)
     printf("%s:       %" PRIX32 "\n", regs[i], cpu.gpr[i]);
 
