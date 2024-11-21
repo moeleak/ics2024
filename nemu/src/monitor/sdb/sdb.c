@@ -68,7 +68,7 @@ static int cmd_si(char* args) {
 static int cmd_info(char* args) {
   if (args == NULL)
   {
-    printf("info r to print the register info\ninfo w to print watchpoint information\n");
+    printf("Usage: info r to print the register info\ninfo w to print watchpoint information\n");
     return 0;
   }
 
@@ -84,6 +84,17 @@ static int cmd_info(char* args) {
   return 0;
 }
 
+static int cmd_x(char* args) {
+  if (args == NULL)
+  {
+    printf("Usage: x N EXPR");
+    return 0;
+  }
+  Log("%s", args);
+  
+  return 0;
+}
+
 static struct {
   const char *name;
   const char *description;
@@ -96,6 +107,7 @@ static struct {
   /* TODO: Add more commands */
   { "si", "Single execution", cmd_si},
   { "info", "Print the program progress", cmd_info},
+  { "x", "Scan the memory", cmd_x},
   
   
 
