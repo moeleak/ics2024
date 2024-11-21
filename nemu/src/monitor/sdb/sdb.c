@@ -74,7 +74,7 @@ static int cmd_info(char* args) {
 
   if (strcmp(args, "r") == 0) {
     // TODO: Print Register info
-    printf("Print Register info\n");
+    isa_reg_display();
   } else if (strcmp(args, "w") == 0) {
     // TODO: Print Watchpoint info
     printf("Print Watchpoint info\n");
