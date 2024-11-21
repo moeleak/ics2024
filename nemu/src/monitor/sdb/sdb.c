@@ -56,12 +56,17 @@ static int cmd_help(char *args);
 
 static int cmd_si(char* args) {
   Log("%s", args);
+  static int pc = 1;
   
   int n = 0;
   if (args != NULL) sscanf(args, "%d", &n);
-  static int pc = 1;
-  cpu_exec(pc + n - 1); pc++;
-
+  if (args == NULL) 
+  {
+    cpu_exec(pc + n); pc++;
+  }
+  else {
+    cpu_exec(pc + n - 1); pc++;
+  }
   return 0;
 }
 
