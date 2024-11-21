@@ -54,7 +54,7 @@ static int cmd_q(char *args) {
 
 static int cmd_help(char *args);
 
-static int cmd_s(char* args) {
+static int cmd_si(char* args) {
   Log("%s", args);
   
   int n = 0;
@@ -75,7 +75,8 @@ static struct {
   { "q", "Exit NEMU", cmd_q },
 
   /* TODO: Add more commands */
-  { "s", "Single execution", cmd_s},
+  { "si", "Single execution", cmd_si}
+  
 
 };
 
