@@ -65,6 +65,19 @@ static int cmd_si(char* args) {
   return 0;
 }
 
+static int cmd_info(char* args) {
+  if (strcmp(args, "r") == 0) {
+    // TODO: Print Register info
+    printf("Print Register info\n");
+  } else if (strcmp(args, "w") == 0) {
+    // TODO: Print Watchpoint info
+    printf("Print Watchpoint info\n");
+  } else {
+    printf("Unknown command '%s'\n", args);
+  }
+  return 0;
+}
+
 static struct {
   const char *name;
   const char *description;
@@ -75,7 +88,9 @@ static struct {
   { "q", "Exit NEMU", cmd_q },
 
   /* TODO: Add more commands */
-  { "si", "Single execution", cmd_si}
+  { "si", "Single execution", cmd_si},
+  { "info", "Print the program progress", cmd_info}
+  
   
 
 };
