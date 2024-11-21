@@ -55,18 +55,13 @@ static int cmd_q(char *args) {
 static int cmd_help(char *args);
 
 static int cmd_si(char* args) {
-  Log("%s", args);
-  static int pc = 1;
-  
-  int n = 0;
-  if (args != NULL) sscanf(args, "%d", &n);
-  if (args == NULL) 
-  {
-    cpu_exec(pc + n); pc++;
-  }
+  int step = 0;
+  if (!args)
+    step = 1;
   else {
-    cpu_exec(pc + n - 1); pc++;
+    sscanf(args, "%d", &step);
   }
+  cpu_exec(step);
   return 0;
 }
 
