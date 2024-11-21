@@ -89,7 +89,7 @@ static struct {
 
   /* TODO: Add more commands */
   { "si", "Single execution", cmd_si},
-  { "info", "Print the program progress", cmd_info}
+  { "info", "Print the program progress", cmd_info},
   
   
 
