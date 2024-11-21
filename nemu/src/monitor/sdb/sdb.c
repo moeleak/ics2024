@@ -66,6 +66,12 @@ static int cmd_si(char* args) {
 }
 
 static int cmd_info(char* args) {
+  if (args == NULL)
+  {
+    printf("info r to print the register info\ninfo w to print watchpoint information\n");
+    return 0;
+  }
+
   if (strcmp(args, "r") == 0) {
     // TODO: Print Register info
     printf("Print Register info\n");
@@ -73,11 +79,6 @@ static int cmd_info(char* args) {
     // TODO: Print Watchpoint info
     printf("Print Watchpoint info\n");
   } else {
-    if (args == NULL)
-    {
-      printf("info r to print the register info\ninfo w to print watchpoint information\n");
-      return 0;
-    }
     printf("Unknown command '%s'\n", args);
   }
   return 0;
