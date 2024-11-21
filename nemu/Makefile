@@ -64,4 +64,4 @@ endif
 
 debug:
 	make
-	gdb ./build/$(TARGET)
+	gdb ./build/riscv32-nemu-interpreter
