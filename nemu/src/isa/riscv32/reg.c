@@ -26,9 +26,9 @@ const char *regs[] = {
 void isa_reg_display() {
   size_t num_regs = sizeof(regs) / sizeof(regs[0]);
 
-  printf("%-15s0x%-15x", "pc", cpu.pc);
+  printf("%-15s0x%-15x\n", "pc", cpu.pc);
   for (int i = 0; i < num_regs; i++)
-    printf("%-15s0x%-15x", regs[i], cpu.gpr[i]);
+    printf("%-15s0x%-15x\n", regs[i], cpu.gpr[i]);
 
 }
 
