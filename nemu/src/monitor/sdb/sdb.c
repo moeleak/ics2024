@@ -55,6 +55,7 @@ static int cmd_q(char *args) {
 static int cmd_help(char *args);
 
 static int cmd_s(char* args) {
+  Log("%s", args);
   static int pc = 1;
   cpu_exec(pc); pc++;
 
