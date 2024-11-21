@@ -60,7 +60,7 @@ static int cmd_s(char* args) {
   int n = 0;
   if (args != NULL) sscanf(args, "%d", &n);
   static int pc = 1;
-  cpu_exec(pc + n); pc++;
+  cpu_exec(pc + n - 1); pc++;
 
   return 0;
 }
