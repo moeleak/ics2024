@@ -94,7 +94,6 @@ static int cmd_x(char* args) {
   char* n_str = strtok(NULL, " ");
   char* expr_str = strtok(NULL, " ");
 
-  Log("%s", n_str);
 
   if (!(expr_str[0] == '0' && expr_str[1] == 'x'))
   {
@@ -102,6 +101,7 @@ static int cmd_x(char* args) {
     return 0;
   }
 
+  Log("%s %s", n_str, expr_str);
   //Log(n_str, expr_str);
 
   
