@@ -90,11 +90,22 @@ static int cmd_x(char* args) {
     printf("Usage: x N EXPR\n");
     return 0;
   }
-  int n = 0; int expr = 0;
+
+  char* n_str = strtok(NULL, " ");
+  char* expr_str = strtok(NULL, " ");
+
+  Log("%s", n_str);
+
+  if (!(expr_str[0] == '0' && expr_str[1] == 'x'))
+  {
+    printf("Usage: x N EXPR\n");
+    return 0;
+  }
+
+  //Log(n_str, expr_str);
 
   
 
-  sscanf(args, "%d %x", &n, &expr);
   
   return 0;
 }
