@@ -87,10 +87,14 @@ static int cmd_info(char* args) {
 static int cmd_x(char* args) {
   if (args == NULL)
   {
-    printf("Usage: x N EXPR");
+    printf("Usage: x N EXPR\n");
     return 0;
   }
-  Log("%s", args);
+  int n = 0; 
+
+  
+
+  sscanf(args, "%d %x", )
   
   return 0;
 }
