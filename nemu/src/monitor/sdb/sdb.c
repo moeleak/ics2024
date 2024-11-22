@@ -90,11 +90,11 @@ static int cmd_x(char* args) {
     printf("Usage: x N EXPR\n");
     return 0;
   }
-  int n = 0; 
+  int n = 0; int expr = 0;
 
   
 
-  sscanf(args, "%d %x", )
+  sscanf(args, "%d %x", &n, &expr);
   
   return 0;
 }
