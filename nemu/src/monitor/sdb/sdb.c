@@ -21,6 +21,8 @@
 
 static int is_batch_mode = false;
 
+word_t vaddr_read(vaddr_t addr, int len);
+
 void init_regex();
 void init_wp_pool();
 
@@ -95,14 +97,23 @@ static int cmd_x(char* args) {
   char* expr_str = strtok(NULL, " ");
 
 
-  if (!(expr_str[0] == '0' && expr_str[1] == 'x'))
+  if (!(strlen(expr_str) >> 2 &&expr_str[0] == '0' && expr_str[1] == 'x'))
   {
     printf("Usage: x N EXPR\n");
     return 0;
   }
 
+
   Log("%s %s", n_str, expr_str);
-  //Log(n_str, expr_str);
+  int n = atoi(n_str);
+  int expr = (int)strtol(expr_str+2,NULL,16);
+
+
+  for(int i = 0; i < n; ++i){
+    printf("0x%-12x0x%02x  0x%02x  0x%02x  0x%02x",(expr),vaddr_read(expr,1),vaddr_read(expr+1,1),vaddr_read(expr+2,1),vaddr_read(expr+3,1));
+    printf("\t  %04d  %04d  %04d  %04d\n",vaddr_read(expr,1),vaddr_read(expr+1,1),vaddr_read(expr+2,1),vaddr_read(expr+3,1));
+    expr += 4;
+  }
 
   
 
